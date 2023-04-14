@@ -29,7 +29,7 @@ export class EmailService {
     return this.email.sendMail({
       to,
       from: this.config.get('EMAIL_SENDER'),
-      subject: 'Please update your password in MedOn System',
+      subject: 'Please reset your password in MedOn System',
       template: 'reset',
       context: {
         link,
