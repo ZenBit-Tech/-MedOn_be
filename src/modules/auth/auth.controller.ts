@@ -17,7 +17,7 @@ import { ResetPasswordDoctorDto } from '@modules/auth/dto/resetPasswordControlle
 import { IServerResponse } from '@common/interfaces/serverResponses';
 import { SignupDoctorDto } from '@modules/auth/dto/signup-doctor.dto';
 import { ReconfirmDoctorDto } from '@modules/auth/dto/reconfirm-doctor.dto';
-import { AuthResetGuard } from './auth.guard';
+import { AuthResetGuard } from '@modules/auth/auth.guard';
 
 @ApiTags('auth')
 @Controller('auth')

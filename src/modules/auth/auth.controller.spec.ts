@@ -5,7 +5,6 @@ import { AuthService } from '@modules/auth/auth.service';
 import { AuthController } from '@modules/auth/auth.controller';
 import { JwtService } from '@nestjs/jwt';
 import { ConfigService } from '@nestjs/config';
-import { IResetPasswordRequest } from '@common/interfaces/resetPasswordRequest';
 
 describe('AuthController', () => {
   let controller: AuthController;

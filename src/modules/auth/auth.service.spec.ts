@@ -7,6 +7,7 @@ import { ConfigService } from '@nestjs/config';
 import { Doctor } from '@entities/Doctor';
 import { Role } from '@common/enums/Role';
 import { AuthService } from '@modules/auth/auth.service';
+import { EmailService } from '@modules/email/email.service';
 
 describe('AuthService', () => {
   let service: AuthService;
@@ -19,6 +20,7 @@ describe('AuthService', () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [
         AuthService,
+        EmailService,
         { provide: getRepositoryToken(Doctor), useValue: mockDoctorRepo },
         {
           provide: JwtService,
@@ -54,7 +56,7 @@ describe('AuthService', () => {
     };
 
     expect(await service.signup(dto)).toEqual(
-      'mock_config_data/auth/confirm/test_token',
+      'mock_config_data/login?token=test_token',
     );
   });
 });
